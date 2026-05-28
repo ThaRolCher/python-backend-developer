@@ -97,3 +97,28 @@ Foi executado um teste de integração de terminal automatizado simulando:
 7. Saída limpa do terminal.
 
 O programa executou sem nenhuma falha, demonstrando total compatibilidade operacional.
+
+---
+
+## 4. Sistema Bancário em Programação Orientada a Objetos com Python
+
+Criei e configurei a nova pasta com a implementação orientada a objetos (POO) estruturada a partir de um modelo de classes UML.
+
+### Alterações Realizadas
+
+- Criada a pasta: [Sistema Bancário em POO com Python](file:///c:/Users/Chericoni/DIO-python-backend-developer/trilha-python-dio/Sistema%20Banc%C3%A1rio%20em%20POO%20com%20Python)
+- Criado o arquivo de código-fonte: [sistema_bancario_poo.py](file:///c:/Users/Chericoni/DIO-python-backend-developer/trilha-python-dio/Sistema%20Banc%C3%A1rio%20em%20POO%20com%20Python/sistema_bancario_poo.py) contendo a arquitetura UML implementada por classes (`Cliente`, `PessoaFisica`, `Conta`, `ContaCorrente`, `Historico`, `Transacao`, `Deposito`, `Saque`). Corrigido o formato de hora para suportar a plataforma Windows sem erros.
+- Criado o arquivo de documentação técnica: [README.md](file:///c:/Users/Chericoni/DIO-python-backend-developer/trilha-python-dio/Sistema%20Banc%C3%A1rio%20em%20POO%20com%20Python/README.md) explicando a relação de herança e encapsulamento das classes no modelo bancário.
+
+### Resultados da Verificação
+
+Foi executado um teste de integração de terminal simulando as operações do menu:
+1. Cadastro de novo cliente Pessoa Física (`Maria Silva`).
+2. Abertura de Conta Corrente associada ao CPF cadastrado.
+3. Listagem de contas correntes cadastradas.
+4. Execução de um Depósito no valor de R$ 300.00 associando o depósito à classe correspondente.
+5. Execução de um Saque no valor de R$ 100.00 validando limites de conta e saques na classe filha `ContaCorrente`.
+6. Exibição do extrato e verificação de saldo final consolidado de R$ 200.00 com data/hora formatada no histórico.
+7. Saída segura.
+
+O programa funcionou perfeitamente em todas as interações.
