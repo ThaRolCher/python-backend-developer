@@ -77,9 +77,20 @@ app.include_router(auth.router, tags=["auth"])
 app.include_router(post.router, tags=["post"])
 
 
+@app.get("/health", tags=["Diagnóstico"])
+async def health_check():
+    """Retorna o estado de funcionamento da API."""
+    return {
+        "status": "online",
+        "ambiente": "desenvolvimento",
+        "database_status": "conectado"
+    }
+
+
 @app.exception_handler(NotFoundPostError)
 async def not_found_post_exception_handler(request: Request, exc: NotFoundPostError):
     return JSONResponse(
         status_code=exc.status_code,
         content={"detail": exc.message},
     )
+

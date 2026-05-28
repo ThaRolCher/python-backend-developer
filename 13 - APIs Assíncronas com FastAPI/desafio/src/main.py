@@ -67,6 +67,16 @@ app.include_router(account.router, tags=["account"])
 app.include_router(transaction.router, tags=["transaction"])
 
 
+@app.get("/health", tags=["Diagnóstico"])
+async def health_check():
+    """Retorna o estado de funcionamento da API."""
+    return {
+        "status": "online",
+        "ambiente": "desenvolvimento",
+        "database_status": "conectado"
+    }
+
+
 @app.exception_handler(AccountNotFoundError)
 async def account_not_found_error_handler(request: Request, exc: AccountNotFoundError):
     return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"detail": "Account not found."})
@@ -75,3 +85,4 @@ async def account_not_found_error_handler(request: Request, exc: AccountNotFound
 @app.exception_handler(BusinessError)
 async def business_error_handler(request: Request, exc: BusinessError):
     return JSONResponse(status_code=status.HTTP_409_CONFLICT, content={"detail": str(exc)})
+
