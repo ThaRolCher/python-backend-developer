@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SynthRead - Um leitor de E-book interativo que explora a revolução das IAs Generativas no desenvolvimento de software backend.">
+    <title>SynthRead - IAs Generativas no Backend</title>
+    <!-- Google Fonts: Outfit e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fundo de Partículas Abstrato -->
+    <div class="bg-glow bg-glow-purple" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-blue" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-green" aria-hidden="true"></div>
+
+    <div class="app-container">
+        <!-- Barra Lateral de Navegação -->
+        <aside class="sidebar" id="sidebar-nav">
+            <div class="sidebar-header">
+                <span class="logo-icon" aria-hidden="true">⚡</span>
+                <h2 class="logo-text">SynthRead</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" id="nav-btn-cover" onclick="loadChapter('cover')">
+                    <span class="nav-num">00</span>
+                    <span class="nav-label">Capa</span>
+                </button>
+                <button class="nav-item" id="nav-btn-preface" onclick="loadChapter('preface')">
+                    <span class="nav-num">I</span>
+                    <span class="nav-label">Prefácio</span>
+                </button>
+                <button class="nav-item" id="nav-btn-cap1" onclick="loadChapter('cap1')">
+                    <span class="nav-num">01</span>
+                    <span class="nav-label">Design de APIs</span>
+                </button>
+                <button class="nav-item" id="nav-btn-cap2" onclick="loadChapter('cap2')">
+                    <span class="nav-num">02</span>
+                    <span class="nav-label">Banco de Dados</span>
+                </button>
+                <button class="nav-item" id="nav-btn-cap3" onclick="loadChapter('cap3')">
+                    <span class="nav-num">03</span>
+                    <span class="nav-label">TDD Aumentado</span>
+                </button>
+                <button class="nav-item" id="nav-btn-cap4" onclick="loadChapter('cap4')">
+                    <span class="nav-num">04</span>
+                    <span class="nav-label">Natty vs Fake</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="author-label">Desenvolvido por</p>
+                <p class="author-name">ThaRolCher</p>
+            </div>
+        </aside>
+
+        <!-- Toggle Menu Mobile -->
+        <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir Menu" onclick="toggleSidebar()">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </button>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <!-- Barra de Leitura superior -->
+            <header class="content-header">
+                <div class="progress-container">
+                    <span class="progress-text">Progresso de Leitura</span>
+                    <div class="progress-bar-bg" aria-hidden="true">
+                        <div class="progress-bar-fill" id="reading-progress"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Janela do Livro -->
+            <article class="book-card" id="book-viewport">
+                <!-- O conteúdo do capítulo será injetado dinamicamente via JS -->
+            </article>
+
+            <!-- Painel de IA Copilot -->
+            <section class="copilot-panel">
+                <div class="copilot-header">
+                    <div class="copilot-title-group">
+                        <span class="copilot-icon" aria-hidden="true">🤖</span>
+                        <h3 class="copilot-title">Assistente Copiloto IA</h3>
+                    </div>
+                    <button class="btn-primary" id="btn-generate-insight" onclick="generateInsight()">
+                        <span class="btn-icon">💡</span>
+                        <span>Gerar Insights do Capítulo</span>
+                    </button>
+                </div>
+                <div class="copilot-body">
+                    <p class="copilot-placeholder" id="insight-text">
+                        Clique no botão acima para sintetizar os principais insights técnicos e filosóficos do capítulo com nossa Inteligência Artificial.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
